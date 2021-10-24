@@ -1,0 +1,47 @@
+<section class="container">
+  <div class="d-flex justify-content-center">
+    <caption>Group</caption>
+  </div>
+  <span class="d-flex mb-3 justify-content-end">
+    <ng-container *ngFor="let screen of checkScreen">
+      <button mat-raised-button mat-dialog-close color="primary" (click)="addMovie()" *ngIf="screen?.screen_desc === 'CreateGroup'">Create New Group</button>
+
+    </ng-container>
+  </span>
+
+  <div>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <!-- Title Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef>ID </th>
+        <td mat-cell *matCellDef="let element"> {{element.grp_id}} </td>
+      </ng-container>
+
+      <!-- Episodes Column -->
+      <ng-container matColumnDef="group">
+        <th mat-header-cell *matHeaderCellDef> Group Name </th>
+        <td mat-cell *matCellDef="let element" > {{element.grp_name}} </td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef> Action </th>
+      <td mat-cell *matCellDef="let element">
+        <ng-container *ngFor="let screen of checkScreen">
+          <button mat-icon-button color="accent" *ngIf="screen?.screen_desc === 'ViewGroupList'">
+            <mat-icon aria-label="Edit" (click)="editMovie(element)"> edit</mat-icon>
+          </button>
+          <button mat-icon-button color="accent" *ngIf="screen?.screen_desc === 'DeleteGroup'">
+            <mat-icon aria-label="Delete" (click)="deleteMovie(element)">delete</mat-icon>
+          </button>
+        </ng-container>
+
+      </td>
+
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+  </section>

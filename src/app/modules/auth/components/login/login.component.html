@@ -1,0 +1,28 @@
+
+<section fxLayoutAlign="center center">
+  <mat-card fxLayout="column" fxFlex="400px" fxFlex.xs="100%">
+
+    <form [formGroup]="loginFrom" (ngSubmit)="login()">
+      <div class="example-container" fxLayout="column">
+        <h2 style="font-weight: 100; text-align: center;">Please User In</h2>
+
+        <mat-form-field appearance="outline">
+          <mat-label>User Name</mat-label>
+          <input type="text" matInput placeholder="Name" formControlName="login_name">
+          <mat-icon matSuffix>account_circle</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input  matInput formControlName="pwd_hash" placeholder="password">
+          <mat-icon matSuffix>vpn_key</mat-icon>
+        </mat-form-field>
+
+        <div fxLayoutAlign="center center">
+          <button type="submit" mat-raised-button   [disabled]="!loginFrom.valid"color="accent">LOGIN</button>
+        </div>
+      </div>
+    </form>
+
+  </mat-card>
+</section>

@@ -1,0 +1,17 @@
+
+<section class="container" style="margin-top: 20px;">
+    <div fxLayout="row" fxLayoutGap="10px" >
+  <ng-container *ngFor="let screen of checkScreen">
+
+    <mat-card routerLink="/{{screen?.module_name}}">
+      <div>
+        <h1>{{screen?.module_name}}</h1>
+      </div>
+     <div>
+      <mat-icon >supervised_user_circle</mat-icon>
+     </div>
+    </mat-card>
+  </ng-container>
+
+    </div>
+</section>
