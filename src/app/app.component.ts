@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationStart, Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -8,16 +8,29 @@ import { Router } from '@angular/router';
 })
 export class AppComponent implements OnInit{
   title = 'adminpanel';
+  showHead: boolean = false;
 
   user:any
   constructor(
     public router: Router
   ) {
-
+    router.events.forEach((event) => {
+      if (event instanceof NavigationStart) {
+        if (event['url'] == '/login') {
+          this.showHead = false;
+        } else {
+          // console.log("NU")
+          this.showHead = true;
+        }
+      }
+    });
   }
 
   ngOnInit() {
      this.user = JSON.parse(localStorage.getItem('currentUser') || '{}');
+     if(this.router){
+
+     }
 
   }
 

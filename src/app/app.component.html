@@ -1,6 +1,6 @@
 <div class="d-flex justify-content-between header">
   <span class="welcome d-flex align-self-center">Welcome!</span>
- <div>
+ <div *ngIf="showHead">
    <span style="margin-right: 15px; color: white;">{{user?.user_name | uppercase}}</span>
   <button type="submit" mat-raised-button color="accent"  (click)="logout()">LogOut</button>
  </div>
