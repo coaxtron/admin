@@ -1,8 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { DashboardService } from '../../services/dashboard.service';
+import { PrevillegeComponent } from '../previllege/previllege.component';
 
 export interface PeriodicElement {
   name: string;
@@ -57,7 +59,8 @@ export class AlluserComponent implements OnInit {
 
 
   constructor(
-    private ds:DashboardService
+    private ds:DashboardService,
+    public dialog : MatDialog
   ) {
   }
 
@@ -74,7 +77,16 @@ export class AlluserComponent implements OnInit {
     )
   }
 
+  edit(): void {
+    const dialogRef = this.dialog.open(PrevillegeComponent, {
+      // width: '250px',
+      data: '',
+    });
 
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(result);
+    });
+  }
 
 
 }

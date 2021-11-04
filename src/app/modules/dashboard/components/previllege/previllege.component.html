@@ -1,0 +1,42 @@
+<h1 mat-dialog-title>Add Privileges</h1>
+<div mat-dialog-content>
+ <form [formGroup]="privileges">
+ <div fxLayout="column">
+ <form formGroupName='user'>
+  <div fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="100px" >
+    <div>User</div>
+    <div fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="10px">
+     <p><mat-checkbox formControlName="edit">Edit</mat-checkbox></p>
+     <p><mat-checkbox formControlName="delete">Delete</mat-checkbox></p>
+     <p><mat-checkbox formControlName="create">Create</mat-checkbox></p>
+    </div>
+  </div>
+ </form>
+ <form formGroupName='group'>
+  <div fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="100px" >
+    <div>Group</div>
+    <div fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="10px">
+     <p><mat-checkbox formControlName="edit">Edit</mat-checkbox></p>
+     <p><mat-checkbox formControlName="delete">Delete</mat-checkbox></p>
+     <p><mat-checkbox formControlName="create">Create</mat-checkbox></p>
+    </div>
+  </div>
+ </form>
+ <form formGroupName='organization'>
+  <div fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="100px" >
+    <div>Organization</div>
+    <div fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="10px">
+     <p><mat-checkbox formControlName="edit">Edit</mat-checkbox></p>
+     <p><mat-checkbox formControlName="delete">Delete</mat-checkbox></p>
+     <p><mat-checkbox formControlName="create">Create</mat-checkbox></p>
+    </div>
+  </div>
+ </form>
+
+ </div>
+ </form>
+</div>
+<div mat-dialog-actions align="center">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button  (click)="submit()">Submit</button>
+</div>

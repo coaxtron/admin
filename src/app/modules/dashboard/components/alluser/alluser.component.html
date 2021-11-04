@@ -4,7 +4,7 @@
   </div>
   <span class="d-flex mb-3 justify-content-end">
     <ng-container *ngFor="let screen of checkScreen">
-      <button mat-raised-button mat-dialog-close color="primary"  *ngIf="screen?.screen_desc === 'crate user'">Create User</button>
+      <button mat-raised-button  color="primary"  *ngIf="screen?.screen_desc === 'crate user'">Create User</button>
 
     </ng-container>
   </span>
@@ -41,7 +41,7 @@
         <div fxLayout="row" fxLayoutAlign="space-between center">
 
        <ng-container *ngFor="let screen of checkScreen">
-          <div class="d-flex flex-column" *ngIf="screen?.screen_desc === 'crate user'">
+          <div class="d-flex flex-column" (click)="edit()" *ngIf="screen?.screen_desc === 'crate user'">
             <span>Edit</span>
             <mat-icon>create</mat-icon>
           </div>

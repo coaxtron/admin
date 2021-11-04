@@ -13,6 +13,11 @@ import { DashboardService } from './services/dashboard.service';
 import { OrganizationComponent } from './components/organization/organization.component';
 import { GroupComponent } from './components/group/group.component';
 import { MatButtonModule } from '@angular/material/button';
+import { PrevillegeComponent } from './components/previllege/previllege.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -20,7 +25,8 @@ import { MatButtonModule } from '@angular/material/button';
     DashboardComponent,
     AlluserComponent,
     OrganizationComponent,
-    GroupComponent
+    GroupComponent,
+    PrevillegeComponent
   ],
   imports: [
     CommonModule,
@@ -30,7 +36,12 @@ import { MatButtonModule } from '@angular/material/button';
     FlexLayoutModule,
     MatTableModule,
     MatPaginatorModule,
-    MatButtonModule
+    MatButtonModule,
+    MatDialogModule,
+    MatCheckboxModule,
+    MatFormFieldModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     DashboardService
